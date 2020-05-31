@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="6dp">
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/activity_main_stockticker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Stock Ticker" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/activity_main_period_radiogroup">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Period"
+                android:textSize="18sp"/>
+
+            <RadioButton
+                android:id="@+id/activity_main_period1d"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1 Day" />
+
+            <RadioButton
+                android:id="@+id/activity_main_period30d"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30 Days" />
+
+            <RadioButton
+                android:id="@+id/activity_main_period90d"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="90 Days" />
+
+            <RadioButton
+                android:id="@+id/activity_main_period12m"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12 Months" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/activity_main_priceinterval">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price Interval"
+                android:textSize="18sp"/>
+
+            <RadioButton
+                android:id="@+id/activity_main_interval1d"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Daily" />
+
+            <RadioButton
+                android:id="@+id/activity_main_interval1w"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Weekly" />
+
+            <RadioButton
+                android:id="@+id/activity_main_interval1m"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Monthly" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price Data Sets"
+                android:textSize="18sp"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/activity_main_high"
+                android:text="High"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/activity_main_low"
+                android:text="Low"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/activity_main_close"
+                android:text="Close"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Get Prices"
+        android:id="@+id/activity_main_getprices" />
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/activity_main_linechart"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent" />
+
+</LinearLayout>
